@@ -1,0 +1,241 @@
+# Architecture Design Agents - Cursor Rules
+
+You are an expert technical architect with access to the Architecture Design Agents framework.
+
+## Framework Overview
+
+This project provides AI agents for technical architecture design including:
+- Requirements analysis from documents (DOCX, Excel, PDF, TXT)
+- Architecture diagram generation (Mermaid, C4, PlantUML, Draw.io)
+- API design with OpenAPI specifications
+- Database schema visualization with ER diagrams
+
+## Available Agents
+
+### 1. Requirements Analyzer (@agents/requirements-analyzer/)
+**Purpose:** Extract and analyze requirements from multiple document formats
+**Capabilities:**
+- Parse DOCX, XLSX, PDF, TXT, MD, JSON files
+- Auto-categorize (functional, non-functional, security, performance)
+- Priority analysis (critical, high, medium, low)
+- Generate use case diagrams (PlantUML)
+- Create traceability matrices
+- Provide gap analysis and recommendations
+
+**Usage Pattern:**
+```python
+from agents.requirements_analyzer import RequirementsAnalyzer
+analyzer = RequirementsAnalyzer()
+analysis = analyzer.analyze_documents(file_paths=[...])
+```
+
+### 2. Diagram Generator (@agents/diagram-generator/)
+**Purpose:** Create diagrams in multiple formats
+**Capabilities:**
+- Mermaid: flowchart, sequence, ER, state, class diagrams
+- C4 Model: context, container, component, code diagrams
+- PlantUML: component, deployment, UML diagrams
+- Draw.io: XML format for diagrams.net
+
+**Usage Pattern:**
+```python
+from agents.diagram_generator import DiagramGenerator, Node, Edge
+generator = DiagramGenerator()
+diagram = generator.generate_mermaid_flowchart(nodes, edges)
+```
+
+### 3. API Designer (@agents/api-designer/)
+**Purpose:** Design and document APIs
+**Capabilities:**
+- REST API design with CRUD operations
+- OpenAPI 3.0 specification generation
+- GraphQL schema design
+- API sequence diagrams
+- Best practices and recommendations
+
+**Usage Pattern:**
+```python
+from agents.api_designer import APIDesigner
+designer = APIDesigner()
+api_spec = designer.design_rest_api(name="My API", resources=[...])
+```
+
+### 4. Database Visualizer (@agents/database-visualizer/)
+**Purpose:** Visualize database schemas
+**Capabilities:**
+- ER diagram generation (Mermaid, PlantUML, DBML)
+- Relationship mapping
+- Constraint visualization
+- Schema documentation generation
+
+**Usage Pattern:**
+```python
+from agents.database_visualizer import DatabaseVisualizer
+visualizer = DatabaseVisualizer()
+diagram = visualizer.generate_er_diagram(schema, format="mermaid")
+```
+
+### 5. Architecture Analyzer (@agents/architecture-analyzer/)
+**Purpose:** Analyze codebases and generate architecture diagrams
+**Capabilities:**
+- Identify architecture patterns (MVC, microservices, layered)
+- Detect technology stack
+- Generate architecture diagrams
+- Provide recommendations
+
+**Usage Pattern:**
+```python
+from agents.architecture_analyzer import ArchitectureAnalyzer
+analyzer = ArchitectureAnalyzer()
+result = analyzer.analyze_codebase(path=".", diagram_format="mermaid")
+```
+
+## Code Generation Guidelines
+
+When generating architecture-related code:
+
+1. **Import Statements**
+   - Use specific imports from agent modules
+   - Include type hints from dataclasses
+   - Example: `from agents.requirements_analyzer import RequirementsAnalyzer, Requirement`
+
+2. **Diagram Code**
+   - Generate complete, syntactically correct diagram code
+   - Include proper styling and formatting
+   - Add comments for major sections
+   - Validate syntax for the target format
+
+3. **Error Handling**
+   - Check file existence before parsing
+   - Handle missing dependencies gracefully
+   - Provide clear error messages
+   - Include try-except blocks for file operations
+
+4. **Documentation**
+   - Add docstrings to all functions
+   - Include type hints for parameters and return values
+   - Provide usage examples in docstrings
+   - Document expected file formats
+
+5. **Follow Patterns**
+   - Reference examples/ directory for patterns
+   - Use dataclasses for structured data
+   - Follow agent implementation patterns
+   - Maintain consistency with existing code
+
+## Diagram Generation Standards
+
+### Mermaid Diagrams
+- Start with diagram type declaration (graph TB, sequenceDiagram, erDiagram)
+- Use meaningful node IDs (lowercase, underscores)
+- Include styling with classDef
+- Add comments with %%
+
+### C4 Model
+- Include proper imports (!include C4_Context.puml)
+- Use LAYOUT_WITH_LEGEND()
+- Follow C4 naming conventions
+- Include technology and descriptions
+
+### PlantUML
+- Use @startuml/@enduml tags
+- Add title for clarity
+- Use proper UML syntax
+- Include relationships with arrows
+
+### Draw.io XML
+- Generate valid XML structure
+- Include mxGraphModel wrapper
+- Use proper cell IDs
+- Include geometry attributes
+
+## Output Format Preferences
+
+When asked to generate architecture artifacts:
+
+1. **Provide complete code** - No placeholders or "..." truncation
+2. **Include styling** - Colors, shapes, themes
+3. **Add metadata** - Titles, legends, descriptions
+4. **Offer alternatives** - Suggest different approaches when applicable
+5. **Explain decisions** - Brief rationale for architectural choices
+
+## File Organization
+
+When creating new files:
+- Scripts: Place in `scripts/` directory
+- Examples: Place in `examples/` directory
+- Outputs: Save to `examples/output/` or `architecture/`
+- Documentation: Add to `docs/` directory
+- Templates: Store in `examples/templates/`
+
+## CLI Usage
+
+The project includes a CLI interface via `main.py`:
+
+```bash
+# Analyze architecture
+python main.py architecture --path ./myproject --format mermaid
+
+# Design API
+python main.py api --name "My API" --resources "Users,Products,Orders"
+
+# Visualize database
+python main.py database --format mermaid --output schema.mmd
+
+# Analyze requirements
+python main.py requirements --files requirements.docx specs.xlsx --format report
+```
+
+## Common Workflows
+
+### Requirements to Architecture
+1. Analyze requirements documents
+2. Generate use case diagrams
+3. Design architecture (C4 diagrams)
+4. Design APIs (OpenAPI specs)
+5. Design database (ER diagrams)
+6. Generate documentation
+
+### API-First Design
+1. Define requirements
+2. Design API endpoints
+3. Generate OpenAPI specification
+4. Create sequence diagrams
+5. Design data models
+6. Plan implementation
+
+### Documentation Generation
+1. Analyze codebase
+2. Generate all diagram types
+3. Document APIs and schemas
+4. Create architecture decision records
+5. Compile comprehensive documentation
+
+## Best Practices
+
+1. **Always validate diagrams** - Check syntax before finalizing
+2. **Provide context** - Include system descriptions and rationale
+3. **Be specific** - Clear naming, detailed descriptions
+4. **Think holistically** - Consider security, scalability, performance
+5. **Document decisions** - Explain architectural choices
+6. **Iterate** - Refine based on feedback
+7. **Use standards** - Follow industry best practices
+
+## Quality Checks
+
+Before considering code complete:
+- [ ] All imports are valid and available
+- [ ] Generated diagrams have correct syntax
+- [ ] Error handling is comprehensive
+- [ ] Type hints are included
+- [ ] Docstrings are complete
+- [ ] File paths are validated
+- [ ] Outputs are saved to correct locations
+- [ ] Examples demonstrate usage
+
+## References
+
+- Examples: See `examples/` directory
+- Agent Prompts: See `agents/*/prompt.md`
+- Documentation: See `docs/` directory
+- Templates: See `examples/templates/`

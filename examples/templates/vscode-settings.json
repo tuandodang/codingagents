@@ -1,0 +1,58 @@
+{
+  "files.associations": {
+    "*.mmd": "mermaid",
+    "*.puml": "plantuml",
+    "*.dbml": "dbml"
+  },
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/agents",
+    "${workspaceFolder}/skills"
+  ],
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.formatting.provider": "black",
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "cursor.commands": [
+    {
+      "name": "Analyze Requirements",
+      "description": "Analyze requirement documents and generate reports",
+      "prompt": "Using @agents/requirements-analyzer/prompt.md, analyze all requirement documents in docs/ directory and generate:\n1. Use case diagram (PlantUML)\n2. Requirements traceability matrix\n3. Comprehensive requirement report\n4. Gap analysis and recommendations\n\nSave all outputs to architecture/requirements/ directory."
+    },
+    {
+      "name": "Generate Architecture Diagrams",
+      "description": "Generate complete architecture diagrams",
+      "prompt": "Using @agents/architecture-analyzer/prompt.md and @agents/diagram-generator/prompt.md:\n1. Analyze the codebase structure\n2. Identify architecture patterns\n3. Generate C4 Context diagram\n4. Generate C4 Container diagram\n5. Generate C4 Component diagrams for main services\n6. Create Mermaid flowchart showing data flow\n\nSave all diagrams to architecture/diagrams/ directory."
+    },
+    {
+      "name": "Design API",
+      "description": "Design REST API with OpenAPI specification",
+      "prompt": "Using @agents/api-designer/prompt.md, design a complete REST API:\n1. Identify resources from requirements\n2. Design CRUD endpoints\n3. Generate OpenAPI 3.0 specification\n4. Create sequence diagrams for key flows\n5. Define request/response schemas\n6. Include authentication and error handling\n\nSave to architecture/api/ directory."
+    },
+    {
+      "name": "Create Database Diagrams",
+      "description": "Generate database ER diagrams",
+      "prompt": "Using @agents/database-visualizer/prompt.md:\n1. Analyze database schema requirements\n2. Design database schema with tables and relationships\n3. Generate Mermaid ER diagram\n4. Generate PlantUML ER diagram\n5. Generate DBML schema\n6. Create comprehensive schema documentation\n\nSave to architecture/database/ directory."
+    },
+    {
+      "name": "Complete Architecture Documentation",
+      "description": "Generate complete architecture documentation",
+      "prompt": "Create comprehensive architecture documentation:\n1. Use Requirements Analyzer for requirements\n2. Use Architecture Analyzer for system overview\n3. Use Diagram Generator for all diagram types\n4. Use API Designer for API documentation\n5. Use Database Visualizer for data models\n6. Compile into architecture/README.md\n\nInclude:\n- System overview\n- Architecture decisions\n- All diagrams\n- API documentation\n- Database schema\n- Deployment guide"
+    }
+  ],
+  "search.exclude": {
+    "**/.git": true,
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    "examples/output": true
+  },
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true
+  }
+}

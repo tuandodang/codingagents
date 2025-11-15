@@ -252,6 +252,24 @@ cd codingagents
 pip install -r requirements.txt
 ```
 
+## Using with AI Tools
+
+These agents work seamlessly with popular AI coding assistants:
+
+### 🤖 Claude AI
+Upload agent prompts to Claude Projects for interactive architecture design sessions.
+[Complete Guide →](docs/CLAUDE_INTEGRATION.md) | [Quick Start →](docs/QUICK_START_AI_TOOLS.md#-claude-ai---quick-start)
+
+### 💻 GitHub Copilot
+Use detailed comments and agent imports to guide Copilot's code generation.
+[Quick Start →](docs/QUICK_START_AI_TOOLS.md#-github-copilot---quick-start)
+
+### 🎯 Cursor
+Reference agent prompts with @ and use custom commands for integrated workflows.
+[Quick Start →](docs/QUICK_START_AI_TOOLS.md#-cursor---quick-start)
+
+**See [AI Tool Integration Guide](docs/AI_TOOL_INTEGRATION.md) for comprehensive usage with all AI tools.**
+
 ## Configuration
 
 Each agent can be configured via:
