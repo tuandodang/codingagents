@@ -14,8 +14,7 @@ This project provides specialized agents that can analyze codebases, generate ar
 2. **Diagram Generator Agent** - Creates diagrams in multiple formats (Mermaid, C4, PlantUML, draw.io)
 3. **API Design Agent** - Designs and documents APIs with sequence diagrams
 4. **Database Visualizer Agent** - Creates ER diagrams from database schemas
-5. **Dependency Mapper Agent** - Maps dependencies and creates dependency diagrams
-6. **Documentation Generator Agent** - Creates comprehensive architecture documentation
+5. **Requirements Analyzer Agent** - Extracts and analyzes requirements from multiple document formats (DOCX, Excel, PDF, TXT)
 
 ### 🎨 Diagram Formats Supported
 
@@ -40,8 +39,7 @@ codingagents/
 │   ├── diagram-generator/           # Generates diagrams in various formats
 │   ├── api-designer/                # API design and documentation
 │   ├── database-visualizer/         # Database schema visualization
-│   ├── dependency-mapper/           # Dependency analysis and visualization
-│   └── documentation-generator/     # Architecture documentation
+│   └── requirements-analyzer/       # Requirements extraction and analysis
 ├── skills/                          # Reusable skills
 │   └── diagram-skills/              # Diagram generation capabilities
 ├── utils/                           # Utility functions
@@ -95,6 +93,27 @@ api_spec = designer.design_api(
     requirements="RESTful API for user management",
     include_sequence_diagram=True
 )
+```
+
+### Requirements Analysis
+
+```python
+from agents.requirements_analyzer import RequirementsAnalyzer
+
+analyzer = RequirementsAnalyzer()
+analysis = analyzer.analyze_documents(
+    file_paths=["requirements.docx", "specs.xlsx", "user_stories.pdf"],
+    auto_categorize=True
+)
+
+# Generate use case diagram
+use_case_diagram = analyzer.generate_use_case_diagram(analysis)
+
+# Generate traceability matrix
+matrix = analyzer.generate_traceability_matrix(analysis)
+
+# Generate full report
+report = analyzer.generate_requirement_report(analysis)
 ```
 
 ## Use Cases
@@ -176,27 +195,27 @@ Analyze architecture and get suggestions for:
 **Input:** Database schema (SQL, ORM models, existing DB connection)
 **Output:** ER diagrams, schema documentation
 
-### Dependency Mapper Agent
+### Requirements Analyzer Agent
 
 **Capabilities:**
-- Service dependency mapping
-- Package dependency analysis
-- Circular dependency detection
-- Dependency graph visualization
+- Multi-format document parsing (DOCX, Excel, PDF, TXT, MD, JSON)
+- Automatic requirement extraction and categorization
+- Requirement type classification (functional, non-functional, security, performance)
+- Priority analysis (critical, high, medium, low)
+- Use case diagram generation
+- Requirements traceability matrix
+- Comprehensive requirement reports
+- Gap analysis and recommendations
 
-**Input:** Project configuration, package files, service definitions
-**Output:** Dependency diagrams, dependency analysis report
+**Supported Document Formats:**
+- **Word Documents (DOCX)**: Parse structured requirements with sections and headings
+- **Excel Spreadsheets (XLSX, XLS)**: Extract requirements from tabular format
+- **PDF Documents**: Extract text and identify requirements
+- **Text/Markdown Files (TXT, MD)**: Parse plaintext requirements
+- **JSON**: Import structured requirement data
 
-### Documentation Generator Agent
-
-**Capabilities:**
-- Architecture Decision Records (ADRs)
-- System overview documentation
-- Component documentation
-- README generation
-- Markdown documentation with embedded diagrams
-
-**Input:** Architecture analysis, custom requirements
+**Input:** List of requirement document paths, categorization preferences
+**Output:** Requirement analysis, use case diagrams, traceability matrix, detailed reports
 **Output:** Comprehensive markdown documentation
 
 ## Example Outputs
