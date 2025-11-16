@@ -1206,6 +1206,101 @@ We recommend proceeding with this solution because:
 
 ---
 
+## Related Resources
+
+### For NashTech Technical Analysts
+
+If you are creating proposals following **NashTech standards**, refer to these comprehensive guidelines:
+
+**Primary Resources:**
+
+1. **[NASHTECH_TA_GUIDELINES.md](./NASHTECH_TA_GUIDELINES.md)** - Complete NashTech TA workflow
+   - 14-section technical proposal structure (mandatory template)
+   - Critical compliance rules:
+     - ⛔ NEVER delete numbered sections (use "N/A" instead)
+     - ⛔ NEVER invent numeric values (source from client or use "TBD")
+     - ✅ ALWAYS source requirements with citations
+     - 📝 Use plain, concise English (no marketing fluff)
+     - 🔗 Ensure cross-section consistency
+   - Section-by-section templates and examples
+   - Quick command triggers for Claude AI
+   - Document analysis protocols (multi-pass strategy)
+   - Quality assurance checklist
+   - Common pitfalls and how to avoid them
+
+2. **[ENTERPRISE_ARCHITECTURE_DIAGRAM_GUIDELINES.md](./ENTERPRISE_ARCHITECTURE_DIAGRAM_GUIDELINES.md)** - Professional diagram standards
+   - Security-first architecture principles (6 core principles)
+   - Zone-based architecture organization (NOT layers)
+     - Internet/Edge Zone
+     - DMZ/Perimeter Zone
+     - Application Zone
+     - Data Zone
+     - Management Zone
+     - Integration Zone
+   - Complete component specifications (technology stack + sizing)
+   - Data flow specifications (protocol, port, authentication)
+   - Mandatory legend requirements
+   - Architecture notes panel (performance, security, HA/DR, cost)
+   - Draw.io best practices
+   - Quality checklist and review process
+
+**Supporting Resources:**
+
+3. **[ARCHITECTURE_DESIGN_PHASES.md](./ARCHITECTURE_DESIGN_PHASES.md)** - 10-phase architecture methodology
+   - Tool-agnostic AI prompts for each phase
+   - Requirements gathering through review & validation
+   - Complete workflow examples
+
+4. **WBS Generator Agent** - Work breakdown structure and presale proposals
+   - PERT-based estimation (Optimistic, Likely, Pessimistic)
+   - Resource allocation and costing
+   - Gantt charts and WBS trees
+   - Professional presale proposal generation
+
+### Integration Workflow for NashTech Proposals
+
+Follow this workflow when creating NashTech client proposals:
+
+```
+1. Requirements Analysis
+   ↓ Use: Document Analysis Protocols (NASHTECH_TA_GUIDELINES.md)
+   ↓ Extract: Requirements with source citations
+
+2. Architecture Design
+   ↓ Use: ARCHITECTURE_DESIGN_PHASES.md (10 phases)
+   ↓ Apply: ENTERPRISE_ARCHITECTURE_DIAGRAM_GUIDELINES.md
+   ↓ Output: Client-specific architecture diagram
+
+3. Technical Proposal Creation
+   ↓ Use: 14-section structure (NASHTECH_TA_GUIDELINES.md)
+   ↓ Apply: Section-by-section templates
+   ↓ Include: WBS with PERT estimates (WBS Generator)
+
+4. Quality Assurance
+   ↓ Check: All compliance rules followed
+   ↓ Verify: Cross-section consistency
+   ↓ Review: Quality assurance checklist
+
+5. Client Delivery
+   ↓ Ensure: Professional formatting
+   ↓ Include: All required diagrams and appendices
+   ↓ Confirm: No TBD items without client agreement
+```
+
+### Key Differences: General vs. NashTech Standards
+
+| Aspect | General (This Guide) | NashTech Standards |
+|--------|---------------------|-------------------|
+| **Section Structure** | Flexible, adapt to client | 14 mandatory sections |
+| **Section Handling** | Can omit if not applicable | NEVER delete (use "N/A") |
+| **Numeric Values** | Use best estimates | ONLY from client (or "TBD") |
+| **Source Citations** | Recommended | MANDATORY for all requirements |
+| **Architecture Diagrams** | Best practices | Zone-based, security-first required |
+| **Consistency Checks** | Important | Critical compliance rule |
+| **Language** | Professional | Plain English (no marketing fluff) |
+
+---
+
 ## Conclusion
 
 A high-quality technical proposal is client-centric, technically sound, clearly written,
@@ -1217,5 +1312,16 @@ Use this guide as a checklist and reference as you create technical proposals. A
 templates to your specific client and project context, but maintain the core principles
 of clarity, completeness, and client focus.
 
+**For NashTech Technical Analysts**: Follow the stricter standards in **[NASHTECH_TA_GUIDELINES.md](./NASHTECH_TA_GUIDELINES.md)** which build upon these general guidelines with mandatory compliance rules and detailed section templates.
+
 Remember: Your technical proposal is often the first detailed technical document the client
 sees. Make it count.
+
+---
+
+**Document Version:** 1.0
+**Last Updated:** 2025-11-16
+**Related Documents:**
+- NASHTECH_TA_GUIDELINES.md (NashTech-specific standards)
+- ENTERPRISE_ARCHITECTURE_DIAGRAM_GUIDELINES.md (Professional diagram standards)
+- ARCHITECTURE_DESIGN_PHASES.md (10-phase methodology)

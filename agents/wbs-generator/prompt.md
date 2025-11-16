@@ -609,9 +609,33 @@ Before finalizing, verify:
 
 ### Additional Resources
 
-For detailed guidance on technical proposals, see:
+For detailed guidance on technical proposals and NashTech standards, see:
+
+**General Guidelines:**
 - `docs/TECHNICAL_PROPOSAL_GUIDELINES.md` - Comprehensive proposal guidelines
 - `docs/ARCHITECTURE_DESIGN_PHASES.md` - Architecture design methodology
+
+**NashTech-Specific Standards:**
+- `docs/NASHTECH_TA_GUIDELINES.md` - **[PRIMARY RESOURCE]** Complete NashTech TA workflow including:
+  - 14-section technical proposal structure
+  - Critical compliance rules (never delete sections, never invent numbers, always source requirements)
+  - Section-by-section templates and guidelines
+  - Quick command triggers and document analysis protocols
+  - Quality assurance checklist and best practices
+
+- `docs/ENTERPRISE_ARCHITECTURE_DIAGRAM_GUIDELINES.md` - Professional diagram standards including:
+  - Zone-based architecture organization (6 security zones)
+  - Component specifications with technology stack labeling
+  - Data flow specifications and security boundaries
+  - Complete legend and architecture notes requirements
+  - Draw.io best practices and quality checklist
+
+**When creating presale proposals for NashTech clients:**
+1. Follow the 14-section structure from NASHTECH_TA_GUIDELINES.md
+2. Apply critical compliance rules (source all requirements, use TBD for unknowns)
+3. Reference ENTERPRISE_ARCHITECTURE_DIAGRAM_GUIDELINES.md for all diagrams
+4. Include WBS with PERT estimates (this tool)
+5. Ensure cross-section consistency (scope ↔ architecture ↔ NFRs ↔ testing ↔ deliverables)
 
 ## Remember
 
