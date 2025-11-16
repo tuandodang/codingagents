@@ -15,6 +15,7 @@ This project provides specialized agents that can analyze codebases, generate ar
 3. **API Design Agent** - Designs and documents APIs with sequence diagrams
 4. **Database Visualizer Agent** - Creates ER diagrams from database schemas
 5. **Requirements Analyzer Agent** - Extracts and analyzes requirements from multiple document formats (DOCX, Excel, PDF, TXT)
+6. **WBS Generator Agent** - Creates work breakdown structures, effort estimates, and presale proposals
 
 ### 🎨 Diagram Formats Supported
 
@@ -39,7 +40,8 @@ codingagents/
 │   ├── diagram-generator/           # Generates diagrams in various formats
 │   ├── api-designer/                # API design and documentation
 │   ├── database-visualizer/         # Database schema visualization
-│   └── requirements-analyzer/       # Requirements extraction and analysis
+│   ├── requirements-analyzer/       # Requirements extraction and analysis
+│   └── wbs-generator/               # Work breakdown structure and presale proposals
 ├── skills/                          # Reusable skills
 │   └── diagram-skills/              # Diagram generation capabilities
 ├── utils/                           # Utility functions
@@ -114,6 +116,42 @@ matrix = analyzer.generate_traceability_matrix(analysis)
 
 # Generate full report
 report = analyzer.generate_requirement_report(analysis)
+```
+
+### WBS Generation & Presale Proposals
+
+```python
+from agents.wbs_generator import WBSGenerator, Task, Resource, Estimation, ResourceType, EstimationUnit
+
+generator = WBSGenerator()
+
+# Create project
+project = generator.create_project(
+    name="E-Commerce Platform",
+    description="Build scalable e-commerce platform",
+    budget=500000,
+    timeline_weeks=24
+)
+
+# Add resources
+project.resources = [
+    Resource("Senior Architect", ResourceType.ARCHITECT, 150.0, 0.5),
+    Resource("Lead Developer", ResourceType.DEVELOPER, 120.0, 1.0),
+]
+
+# Create WBS structure
+phase1 = Task(
+    id="1",
+    name="Planning & Design",
+    type=TaskType.PHASE,
+    description="Project planning and architecture design"
+)
+
+# Generate outputs
+gantt_chart = generator.generate_mermaid_gantt(project)
+wbs_tree = generator.generate_wbs_tree_mermaid(project)
+proposal = generator.generate_presale_proposal(project)
+markdown_doc = generator.generate_markdown_wbs(project)
 ```
 
 ## Use Cases
@@ -216,7 +254,46 @@ Analyze architecture and get suggestions for:
 
 **Input:** List of requirement document paths, categorization preferences
 **Output:** Requirement analysis, use case diagrams, traceability matrix, detailed reports
-**Output:** Comprehensive markdown documentation
+
+### WBS Generator Agent
+
+**Capabilities:**
+- Work breakdown structure creation (hierarchical task decomposition)
+- PERT-based effort estimation (Optimistic, Likely, Pessimistic)
+- Resource allocation and costing
+- Timeline and milestone planning
+- Presale proposal generation
+- Budget analysis and variance tracking
+- Multiple output formats (Gantt charts, WBS trees, JSON, Markdown)
+
+**Resource Types:**
+- Developer, Architect, QA Engineer, DevOps Engineer, Designer, Project Manager, Business Analyst, Technical Writer
+
+**Estimation Methods:**
+- Three-point estimation (PERT)
+- Multiple units (hours, days, weeks, story points)
+- Standard deviation calculation
+- Confidence intervals
+
+**Output Formats:**
+- **Mermaid Gantt Chart**: Project timeline with dependencies
+- **Mermaid WBS Tree**: Hierarchical task structure visualization
+- **Markdown WBS**: Comprehensive project documentation
+- **JSON**: Structured data export for integration
+- **Presale Proposal**: Professional proposal with cost breakdown, timeline, risks, and assumptions
+- **Effort Summary**: Resource utilization by type
+
+**Presale Features:**
+- Executive summaries
+- Scope and deliverables documentation
+- Team structure and resource allocation
+- Cost breakdown by phase and resource type
+- Risk and assumption tracking
+- Budget variance analysis
+- Professional formatting for client presentations
+
+**Input:** Project description, resource list, task structure, budget, timeline
+**Output:** WBS diagrams, Gantt charts, presale proposals, cost estimates, effort summaries
 
 ## Example Outputs
 

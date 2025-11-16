@@ -28,6 +28,7 @@ This document provides comprehensive guidance for AI assistants (Claude AI and o
 - Design RESTful/GraphQL/gRPC APIs with OpenAPI specifications
 - Visualize database schemas and relationships
 - Extract and analyze requirements from multiple document formats
+- Create work breakdown structures and presale proposals
 - Enable AI-assisted architecture design through natural language
 
 ### Technology Stack
@@ -61,9 +62,13 @@ codingagents/
 │   │   ├── __init__.py
 │   │   ├── agent.py                # Implementation (~600 lines)
 │   │   └── prompt.md
-│   └── requirements-analyzer/      # Multi-document requirements extraction
+│   ├── requirements-analyzer/      # Multi-document requirements extraction
+│   │   ├── __init__.py
+│   │   ├── agent.py                # Implementation (~750 lines)
+│   │   └── prompt.md
+│   └── wbs-generator/              # Work breakdown structure & presale
 │       ├── __init__.py
-│       ├── agent.py                # Implementation (~750 lines)
+│       ├── agent.py                # Implementation (~900 lines)
 │       └── prompt.md
 ├── docs/                           # Documentation
 │   ├── CLAUDE_INTEGRATION.md       # Claude AI integration workflows
@@ -76,6 +81,7 @@ codingagents/
 │   ├── example_api_design.py
 │   ├── example_database_visualization.py
 │   ├── example_requirements_analysis.py
+│   ├── example_wbs_generation.py
 │   └── templates/                  # Reusable architecture templates
 ├── .github/
 │   └── copilot-instructions.md     # GitHub Copilot integration guide
@@ -204,6 +210,14 @@ def parse_document(self, file_path: str) -> List[str]:
 - **Document Formats:** DOCX, XLSX, PDF, TXT, MD, JSON
 - **Classification:** Functional, Non-functional, Security, Performance, Usability, Compliance
 - **Outputs:** Use case diagrams, traceability matrices, comprehensive reports
+
+#### WBS Generator Agent
+- **Purpose:** Create work breakdown structures, estimates, and presale proposals
+- **Key Classes:** `WBSGenerator`, `WBSProject`, `Task`, `Resource`, `Estimation`
+- **Task Types:** Phase, Deliverable, Work Package, Task, Subtask, Milestone
+- **Resource Types:** Developer, Architect, QA Engineer, DevOps, Designer, PM, BA, Technical Writer
+- **Estimation:** PERT method (Optimistic, Likely, Pessimistic), multiple units
+- **Outputs:** Mermaid Gantt charts, WBS trees, Markdown docs, JSON, presale proposals
 
 ---
 
@@ -838,6 +852,7 @@ git push -u origin <branch-name> || (sleep 2 && git push -u origin <branch-name>
 - `examples/example_api_design.py` - API Designer usage
 - `examples/example_database_visualization.py` - Database Visualizer usage
 - `examples/example_requirements_analysis.py` - Requirements Analyzer usage
+- `examples/example_wbs_generation.py` - WBS Generator usage
 
 **Templates:**
 - `examples/templates/` - Reusable architecture templates
@@ -984,6 +999,9 @@ from agents.database_visualizer import DatabaseVisualizer, Table, Field, Relatio
 
 # Requirements Analyzer
 from agents.requirements_analyzer import RequirementsAnalyzer, Requirement, RequirementAnalysis
+
+# WBS Generator
+from agents.wbs_generator import WBSGenerator, WBSProject, Task, Resource, Estimation, TaskType, ResourceType, EstimationUnit
 ```
 
 ### Agent Prompt Locations
@@ -993,6 +1011,7 @@ from agents.requirements_analyzer import RequirementsAnalyzer, Requirement, Requ
 - API Designer: `agents/api-designer/prompt.md`
 - Database Visualizer: `agents/database-visualizer/prompt.md`
 - Requirements Analyzer: `agents/requirements-analyzer/prompt.md`
+- WBS Generator: `agents/wbs-generator/prompt.md`
 
 ---
 
@@ -1019,7 +1038,7 @@ from agents.requirements_analyzer import RequirementsAnalyzer, Requirement, Requ
 
 This codebase is a well-structured, agent-based framework for AI-assisted software architecture design. Key characteristics:
 
-- **Modular Architecture:** 5 specialized agents with clear responsibilities
+- **Modular Architecture:** 6 specialized agents with clear responsibilities
 - **Type Safety:** Comprehensive use of type hints, dataclasses, and enums
 - **Multi-Format Support:** Diagrams in Mermaid, C4, PlantUML, Draw.io
 - **AI-First Design:** Built for integration with Claude AI and other AI tools
