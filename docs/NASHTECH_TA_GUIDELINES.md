@@ -552,6 +552,8 @@ Each technology choice must link to client requirements:
 
 ### Section 5: Non-Functional Considerations
 
+**IMPORTANT:** All NFRs must be **SMART** (Specific, Measurable, Achievable, Relevant, Time-bound). See **[ARCHITECTURE_QUALITY_FRAMEWORK.md](./ARCHITECTURE_QUALITY_FRAMEWORK.md)** for comprehensive quality attribute guidelines.
+
 #### 5.1 Exception Handling Strategy
 
 ```markdown
@@ -1905,6 +1907,8 @@ Developer/QA → Tech Lead → Project Manager → Delivery Manager → CTO
 ## Architecture Diagram Standards
 
 See separate document: **[ENTERPRISE_ARCHITECTURE_DIAGRAM_GUIDELINES.md](./ENTERPRISE_ARCHITECTURE_DIAGRAM_GUIDELINES.md)**
+
+For architecture quality standards and best practices: **[ARCHITECTURE_QUALITY_FRAMEWORK.md](./ARCHITECTURE_QUALITY_FRAMEWORK.md)**
 
 Key requirements for all architecture diagrams:
 

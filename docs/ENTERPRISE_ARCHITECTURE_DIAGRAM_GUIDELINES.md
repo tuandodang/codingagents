@@ -1561,6 +1561,8 @@ Professional enterprise architecture diagrams are critical for:
 
 **For NashTech TA workflow**, see **[NASHTECH_TA_GUIDELINES.md](./NASHTECH_TA_GUIDELINES.md)**.
 
+**For architecture quality standards**, see **[ARCHITECTURE_QUALITY_FRAMEWORK.md](./ARCHITECTURE_QUALITY_FRAMEWORK.md)**.
+
 **For complete technical proposals**, see **[TECHNICAL_PROPOSAL_GUIDELINES.md](./TECHNICAL_PROPOSAL_GUIDELINES.md)**.
 
 ---
