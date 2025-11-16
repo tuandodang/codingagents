@@ -10,12 +10,22 @@ This project provides specialized agents that can analyze codebases, generate ar
 
 ### 🏗️ Agents
 
+#### Architecture & Design
 1. **Architecture Analyzer Agent** - Analyzes codebases and generates architecture diagrams
 2. **Diagram Generator Agent** - Creates diagrams in multiple formats (Mermaid, C4, PlantUML, draw.io)
 3. **API Design Agent** - Designs and documents APIs with sequence diagrams
 4. **Database Visualizer Agent** - Creates ER diagrams from database schemas
 5. **Requirements Analyzer Agent** - Extracts and analyzes requirements from multiple document formats (DOCX, Excel, PDF, TXT)
 6. **WBS Generator Agent** - Creates work breakdown structures, effort estimates, and presale proposals
+
+#### Development & Quality
+7. **Code Review Agent** - Automated code review for quality, security, performance, and best practices
+8. **Test Case Generator Agent** - Generates comprehensive test cases (unit, integration, E2E, performance, security)
+9. **Security Auditor Agent** - Performs security audits (OWASP Top 10, compliance, vulnerability scanning)
+
+#### DevOps & Infrastructure
+10. **DevOps Pipeline Designer Agent** - Designs CI/CD pipelines (GitHub Actions, Jenkins, GitLab CI)
+11. **Infrastructure as Code Generator** - Generates IaC (Terraform, CloudFormation, ARM templates, Pulumi)
 
 ### 🎨 Diagram Formats Supported
 
@@ -41,7 +51,12 @@ codingagents/
 │   ├── api-designer/                # API design and documentation
 │   ├── database-visualizer/         # Database schema visualization
 │   ├── requirements-analyzer/       # Requirements extraction and analysis
-│   └── wbs-generator/               # Work breakdown structure and presale proposals
+│   ├── wbs-generator/               # Work breakdown structure and presale proposals
+│   ├── code-reviewer/               # Automated code review and quality analysis
+│   ├── test-generator/              # Test case generation (unit, integration, E2E)
+│   ├── security-auditor/            # Security audits and vulnerability scanning
+│   ├── devops-designer/             # CI/CD pipeline design
+│   └── iac-generator/               # Infrastructure as Code generation
 ├── skills/                          # Reusable skills
 │   └── diagram-skills/              # Diagram generation capabilities
 ├── utils/                           # Utility functions
@@ -49,6 +64,9 @@ codingagents/
 │   ├── templates/                   # Architecture templates
 │   └── output/                      # Sample generated diagrams
 └── docs/                            # Documentation
+    ├── ARCHITECTURE_QUALITY_FRAMEWORK.md  # Quality standards and best practices
+    ├── NASHTECH_TA_GUIDELINES.md          # NashTech technical proposal guidelines
+    └── ENTERPRISE_ARCHITECTURE_DIAGRAM_GUIDELINES.md  # Professional diagram standards
 ```
 
 ## Quick Start
