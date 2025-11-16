@@ -1596,6 +1596,23 @@ Generate as:
 - ✅ API documentation
 - ✅ Operational runbooks
 
+### Note: Presale Proposals
+
+If this architecture design is for presale activities, use the comprehensive [Technical Proposal Guidelines](TECHNICAL_PROPOSAL_GUIDELINES.md) to create professional, client-facing proposals that include:
+
+- Executive summary with business value
+- Detailed scope definition (in/out of scope)
+- Architecture justification aligned with client needs
+- Non-functional requirements (availability, scalability, security)
+- Deployment model and CI/CD approach
+- Team structure and resource allocation
+- Detailed cost breakdown
+- Timeline with milestones
+- Risk analysis and mitigation strategies
+- Clear acceptance criteria
+
+The WBS Generator Agent can help create work breakdown structures, effort estimates, and presale proposal documents following these guidelines.
+
 ---
 
 ## Phase 10: Review & Validation
@@ -2156,6 +2173,7 @@ For a typical 12-week architecture design phase:
 - [GETTING_STARTED.md](GETTING_STARTED.md) - Setup guide
 - [CLAUDE_INTEGRATION.md](CLAUDE_INTEGRATION.md) - Claude AI workflows
 - [AI_TOOL_INTEGRATION.md](AI_TOOL_INTEGRATION.md) - Multi-tool integration
+- [TECHNICAL_PROPOSAL_GUIDELINES.md](TECHNICAL_PROPOSAL_GUIDELINES.md) - Professional presale proposal guidelines
 
 ### Diagram Tools
 - [Mermaid Live Editor](https://mermaid.live/)

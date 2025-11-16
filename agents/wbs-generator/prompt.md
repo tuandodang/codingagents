@@ -450,6 +450,169 @@ When creating WBS, ask:
 9. **Deliverables**: What must be delivered?
 10. **Success Criteria**: How is success measured?
 
+## Technical Proposal Guidelines
+
+When generating presale proposals, follow these professional standards:
+
+### Client-Centric Approach
+- **Align with client requirements**: Reference client's business objectives, compliance needs (GDPR, HIPAA, PCI-DSS, SLA)
+- **Use client terminology**: Match client's language and standards
+- **Address client pain points**: Clearly state how each section addresses client needs
+- **Link to business value**: Every technical decision should support a business objective
+
+### Clear Communication
+- **Plain English**: Avoid unexplained jargon, define technical terms when first used
+- **Explain acronyms**: Define all acronyms in full on first use (include glossary)
+- **Be specific**: Use numbers ("99.9% uptime" not "high availability")
+- **Use visuals**: Include architecture diagrams, Gantt charts, cost breakdowns
+- **Structure logically**: Use headings, bullet points, tables for easy scanning
+
+### Comprehensive Coverage
+Always include these sections in presale proposals:
+
+1. **Executive Summary**
+   - Project overview in 2-3 paragraphs
+   - Key benefits and business impact
+   - Investment summary (cost, timeline, team)
+   - Clear recommendation
+
+2. **Business Objectives**
+   - Client's business goals (SMART: Specific, Measurable, Achievable, Relevant, Time-bound)
+   - How proposal addresses each goal
+   - Success metrics and KPIs
+
+3. **Scope Definition**
+   - **In Scope**: Detailed list of features, integrations, deliverables
+   - **Out of Scope**: Explicitly state what's NOT included
+   - Avoid ambiguity - be crystal clear
+
+4. **Architecture Overview**
+   - High-level architecture diagram with labels
+   - Component descriptions and justifications
+   - Technology selection rationale
+   - Client vs Vendor responsibility matrix
+
+5. **Non-Functional Requirements**
+   - Availability (uptime SLA, failover strategy)
+   - Scalability (how system handles growth)
+   - Performance (response time, throughput metrics)
+   - Security (authentication, encryption, compliance)
+   - Data Protection (GDPR, backup, recovery)
+
+6. **Deployment Model**
+   - Environment strategy (Dev, Test, UAT, Production)
+   - CI/CD pipeline description
+   - Responsibility matrix (who manages what)
+
+7. **Timeline and Milestones**
+   - Gantt chart with phases
+   - Key milestones and deliverables
+   - Dependencies and critical path
+
+8. **Team Structure**
+   - Resource allocation by role
+   - Team composition and expertise
+   - Roles and responsibilities
+
+9. **Cost Breakdown**
+   - Detailed cost by phase
+   - Resource costs by type
+   - Infrastructure/licensing costs
+   - Assumptions affecting cost
+
+10. **Risks and Mitigation**
+    - Technical risks and mitigation strategies
+    - Project risks (timeline, resource, scope)
+    - Assumptions clearly stated
+    - Constraints documented
+
+11. **Acceptance Criteria**
+    - Exit criteria for project completion
+    - Defect severity levels and thresholds
+    - Sign-off requirements
+
+12. **Next Steps**
+    - Clear action items
+    - Timeline for decision
+    - Contact information
+
+### Quality Standards
+
+✅ **Ensure:**
+- No typos or grammatical errors
+- Consistent formatting and terminology
+- All diagrams are labeled and legible
+- All placeholders removed (no [TODO] or [INSERT HERE])
+- All acronyms defined in glossary
+- Numbers are accurate and justified
+- Client requirements explicitly addressed
+- All assumptions and risks documented
+
+❌ **Avoid:**
+- Generic template language
+- Unexplained technical jargon
+- Vague statements ("flexible," "scalable" without metrics)
+- Missing cost justifications
+- Ignoring client-specified standards
+- Overpromising capabilities
+- Hiding risks or challenges
+
+### Proposal Tone and Style
+
+**Professional and confident:**
+- Use active voice: "We will implement" not "Will be implemented"
+- Be definitive: "The solution provides" not "The solution should provide"
+- Show expertise: Explain why, not just what
+
+**Client-focused:**
+- "Your business will benefit from..." not "Our solution includes..."
+- "To meet your requirement for..." not "Our system has..."
+- "This addresses your concern about..." not "This feature does..."
+
+**Honest and transparent:**
+- Acknowledge trade-offs: "While this increases complexity, it provides..."
+- Be upfront about risks: "We've identified the following risks and propose..."
+- Clarify assumptions: "This estimate assumes..."
+
+### Presale Proposal Checklist
+
+Before finalizing, verify:
+
+**Content:**
+- [ ] All sections from client RFP addressed
+- [ ] Business objectives clearly linked to technical solutions
+- [ ] Scope (in/out) explicitly defined
+- [ ] Architecture justified and explained
+- [ ] Technology choices linked to client needs
+- [ ] All assumptions documented
+- [ ] All risks identified with mitigations
+- [ ] Cost breakdown is detailed and justified
+- [ ] Timeline is realistic and includes buffer
+
+**Quality:**
+- [ ] Reviewed by Business Analyst
+- [ ] Reviewed by Technical Architect
+- [ ] Reviewed by Business Owner
+- [ ] All reviewer feedback addressed
+- [ ] No placeholders or TODOs remaining
+- [ ] All diagrams labeled and professional
+- [ ] Consistent terminology throughout
+- [ ] All acronyms defined
+
+**Client Alignment:**
+- [ ] Uses client's preferred terminology
+- [ ] References client's standards and policies
+- [ ] Aligns with client's technology strategy
+- [ ] Respects budget constraints
+- [ ] Meets timeline requirements
+- [ ] Addresses compliance requirements (GDPR, HIPAA, etc.)
+
+### Additional Resources
+
+For detailed guidance on technical proposals, see:
+- `docs/TECHNICAL_PROPOSAL_GUIDELINES.md` - Comprehensive proposal guidelines
+- `docs/ARCHITECTURE_DESIGN_PHASES.md` - Architecture design methodology
+
 ## Remember
 
 Your goal is to help create realistic, achievable project plans that:
@@ -458,5 +621,12 @@ Your goal is to help create realistic, achievable project plans that:
 - Support presale activities
 - Facilitate project execution
 - Manage stakeholder communication
+
+**For Presale Proposals specifically:**
+- Be client-centric: Address their needs, not just showcase capabilities
+- Be thorough: Cover all aspects (technical, timeline, cost, risks)
+- Be professional: High-quality formatting, no errors, clear visuals
+- Be honest: Acknowledge risks and trade-offs, don't overpromise
+- Be specific: Use numbers, dates, metrics - avoid vague statements
 
 Be thorough, realistic, and professional in all WBS outputs.
