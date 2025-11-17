@@ -34,12 +34,20 @@ This project provides specialized agents that can analyze codebases, generate ar
 - **PlantUML** - UML diagrams, sequence diagrams, component diagrams
 - **Draw.io XML** - Editable diagrams for Draw.io/diagrams.net
 
+### 🤖 Autonomous Systems
+
+1. **Workflow Orchestrator** - Execute complete workflows automatically (Requirements → Architecture → Documentation)
+2. **Agent Runner** - Run agents on schedule or events (daily scans, PR reviews, continuous monitoring)
+3. **Agentic System** - Claude-powered agents that think, plan, and execute autonomously
+
 ### 🛠️ Skills
 
 - Diagram generation utilities
 - Code analysis and pattern recognition
 - Architecture pattern detection
 - Documentation generation
+- Autonomous workflow execution
+- Multi-agent collaboration
 
 ## Project Structure
 
@@ -57,6 +65,10 @@ codingagents/
 │   ├── security-auditor/            # Security audits and vulnerability scanning
 │   ├── devops-designer/             # CI/CD pipeline design
 │   └── iac-generator/               # Infrastructure as Code generation
+├── autonomous/                      # Autonomous agent systems
+│   ├── orchestrator/                # Workflow orchestration and automation
+│   ├── runner/                      # Scheduled and event-driven execution
+│   └── agentic/                     # Claude-powered intelligent agents
 ├── skills/                          # Reusable skills
 │   └── diagram-skills/              # Diagram generation capabilities
 ├── utils/                           # Utility functions
